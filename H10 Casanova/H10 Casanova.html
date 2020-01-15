@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+  <link href='https://fonts.googleapis.com/css?family=Barlow Condensed' rel='stylesheet'>
+  <link rel="stylesheet" href="../fichas_style.css"></link>
+</head>
+
+<body>
+  <div class="activities" style="margin: auto; padding: 0px;"> 
+
+       
+        <span id="stars">H10 Casanova</span>         <!--estrellas del hotel-->
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>    
+        <span><sup></sup></span>      <!-- si el hotel es gran lujo, ..., escribir entre <sub></sub>-->                                            <!--insertar titulo-->
+    <p>Located in the centre of Barcelona, the H10 Casanova is housed in a perfectly restored 18th century building. The hotel has elegant rooms, the delightful Ona Lounge bar, the Despacio Spa Centre, seven meeting rooms and the Sky Bar terrace with plunge pool and views of the city.<p>
+
+    <p>The comfortable rooms at the H10 Casanova have very modern and functional decor and are equipped with all the amenities needed to ensure a pleasant stay. </p>   
+
+    <p>The H10 Casanova has seven fully equipped meeting rooms which are soundproof and can be partitioned. They can accommodate up to 250 people and the Meifrén and Mir meeting rooms have natural light. <p>
+
+                     <!--insertar el texto-->
+    <hr>
+  </div>
+	<div class="container">
+    <div class="main-img">
+      <img src="casanova0.jpg" id="current">
+    </div>
+
+    <div class="imgs">                                          <!--insertar las fotos-->
+      <img src="casanova1.jpg">
+      <img src="casanova2.jpg">
+      <img src="casanova3.jpg">
+      <img src="casanova4.jpg">
+    </div>
+  </div>
+  <hr>
+  
+  <section class="container">
+
+<div class ="one" style="float: left;
+    padding: 10px; background-color: #F5F1E9">
+<p><i class="fa fa-map-o" style="margin: 3px;font-size:20px;color:#EA5933;"></i>   <!--insertar la info relevante a los iconos-->
+<span style="margin: 8px"><b> Location:</b> Eixample</p></span>
+<p><i class="fa fa-h-square" style="font-size:20px;color:#EA5933;"></i> 
+<span style="margin: 22px"><b> Category:</b> 4 stars</p></span>
+<p><i class="fa fa-cutlery" style="font-size:20px;color:#EA5933;"></i> 
+<span style="margin: 22px"><b> Restaurants:</b> 1 Restaurant and 2 bars</p></span>
+<p><i class="fa fa-wifi" style="font-size:20px;color:#EA5933;"></i> 
+<span style="margin: 15px"><b> Wifi:</b> Available in rooms and common areas</p></span>
+<p><i class="fa fa-users" style="font-size:20px;color:#EA5933;"></i> 
+<span style="margin: 20px"><b>Nr. Rooms:</b> 124 rooms</p></span>
+
+</div>
+
+<div class ="two" style="float: right width= 40%;
+    padding: 10px; background-color: #F5F1E9; ">
+<p><i class="fa fa-wheelchair" style="font-size:20px;color:#EA5933;"></i>    <!--insertar la info relevante a los iconos-->
+<span style="margin: 20px"><b> Handicapped facilities: </b> Yes</p></span>
+<p><i class="fa fa-shower" style="font-size:18px;color:#EA5933;"></i> 
+<span style="margin: 20px"><b> Swimmingpool:</b> Yes</p></span>
+<p><i class="fa fa-clock-o" style="font-size:20px;color:#EA5933;"></i> 
+<span style="margin: 20px"><b> Check in/out:</b> 3pm /noon</p></span>
+<p><i class="fa fa-coffee" style="font-size:20px;color:#EA5933;"></i> 
+<span style="margin: 18px"><b> Meeting rooms:</b> max 250 pax</p></span>
+<p><i class="" style="font-size:20px;color:#EA5933;"></i> 
+<span style="margin: 20px;"></span>
+</div>
+</div>
+</div>
+</section>
+</div> 
+	<script>
+		const current = document.querySelector('#current');
+const imgs = document.querySelector('.imgs');
+const img = document.querySelectorAll('.imgs img');
+const opacity = 0.6;
+
+// Set first img opacity
+img[0].style.opacity = opacity;
+
+imgs.addEventListener('click', imgClick);
+
+function imgClick(e) {
+  // Reset the opacity
+  img.forEach(img => (img.style.opacity = 1));
+
+  // Change current image to src of clicked image
+  current.src = e.target.src;
+
+  // Add fade in class
+  current.classList.add('fade-in');
+
+  // Remove fade-in class after .5 seconds
+  setTimeout(() => current.classList.remove('fade-in'), 500);
+
+  // Change the opacity to opacity var
+  e.target.style.opacity = opacity;
+}
+
+	</script>
+</body>
+</html>
